@@ -1,4 +1,6 @@
-﻿[xml]$data = Get-Content "C:\ProgramData\Milestone\Milestone Surveillance\configuration.xml"
+[xml]$data = Get-Content "C:\ProgramData\Milestone\Milestone Surveillance\configuration.xml"
+
+New-Item -ItemType Directory -Path C:\Temp -ErrorAction SilentlyContinue
 
 $data.config.Devices.ChildNodes | Export-Csv C:\temp\devices.csv -NoTypeInformation
 
